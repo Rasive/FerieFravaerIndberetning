@@ -33,7 +33,7 @@ namespace FerieFravaerFileGenerator
             string slutIdentifikationstransaktion = GetSlutIdentifikationstransaktion("SLUTD", listfravaer.Count.ToString("0000"));
             Console.WriteLine(slutIdentifikationstransaktion);
 
-            SkrivTransaktionerTilFil(startIdentifikationstransaktion, listfravaer, slutIdentifikationstransaktion);
+            //SkrivTransaktionerTilFil(startIdentifikationstransaktion, listfravaer, slutIdentifikationstransaktion);
             
         }
 

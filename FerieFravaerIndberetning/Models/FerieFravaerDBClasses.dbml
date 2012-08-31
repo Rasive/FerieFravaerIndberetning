@@ -19,24 +19,24 @@
       <Column Name="Soendag" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Ferie" Member="Feries">
-    <Type Name="Ferie">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.Fravaer" Member="Fravaers">
+    <Type Name="Fravaer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MedarbejderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FoersteFeriedag" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="SidsteFeriedag" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="FerieLoen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FoersteFravaersdag" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="SidsteFravaersdag" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
       <Column Name="Godkendt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Afvist" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Indberettet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.Fravaer" Member="Fravaers">
-    <Type Name="Fravaer">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.Ferie" Member="Feries">
+    <Type Name="Ferie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MedarbejderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FoersteFravaersdag" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
-      <Column Name="SidsteFravaersdag" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="FoersteFeriedag" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SidsteFeriedag" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FerieLoen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Godkendt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Afvist" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Indberettet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />

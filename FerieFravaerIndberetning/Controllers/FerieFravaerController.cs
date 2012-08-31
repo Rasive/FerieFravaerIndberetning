@@ -120,6 +120,7 @@ namespace FerieFravaerIndberetning.Controllers
         {
             if (feriefravaer.Ferie != null)
             {
+                
                 db.Feries.InsertOnSubmit(feriefravaer.Ferie);
                 db.SubmitChanges();
             }

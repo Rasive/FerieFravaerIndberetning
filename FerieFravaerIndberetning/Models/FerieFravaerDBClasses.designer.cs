@@ -36,12 +36,12 @@ namespace FerieFravaerIndberetning.Models
     partial void InsertArbejdsugeTimer(ArbejdsugeTimer instance);
     partial void UpdateArbejdsugeTimer(ArbejdsugeTimer instance);
     partial void DeleteArbejdsugeTimer(ArbejdsugeTimer instance);
-    partial void InsertFerie(Ferie instance);
-    partial void UpdateFerie(Ferie instance);
-    partial void DeleteFerie(Ferie instance);
     partial void InsertFravaer(Fravaer instance);
     partial void UpdateFravaer(Fravaer instance);
     partial void DeleteFravaer(Fravaer instance);
+    partial void InsertFerie(Ferie instance);
+    partial void UpdateFerie(Ferie instance);
+    partial void DeleteFerie(Ferie instance);
     #endregion
 		
 		public FerieFravaerDBClassesDataContext() : 
@@ -90,19 +90,19 @@ namespace FerieFravaerIndberetning.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Ferie> Feries
-		{
-			get
-			{
-				return this.GetTable<Ferie>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Fravaer> Fravaers
 		{
 			get
 			{
 				return this.GetTable<Fravaer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Ferie> Feries
+		{
+			get
+			{
+				return this.GetTable<Ferie>();
 			}
 		}
 	}
@@ -447,6 +447,212 @@ namespace FerieFravaerIndberetning.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fravaer")]
+	public partial class Fravaer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _MedarbejderId;
+		
+		private System.Nullable<System.DateTime> _FoersteFravaersdag;
+		
+		private System.Nullable<System.DateTime> _SidsteFravaersdag;
+		
+		private bool _Godkendt;
+		
+		private bool _Afvist;
+		
+		private bool _Indberettet;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnMedarbejderIdChanging(int value);
+    partial void OnMedarbejderIdChanged();
+    partial void OnFoersteFravaersdagChanging(System.Nullable<System.DateTime> value);
+    partial void OnFoersteFravaersdagChanged();
+    partial void OnSidsteFravaersdagChanging(System.Nullable<System.DateTime> value);
+    partial void OnSidsteFravaersdagChanged();
+    partial void OnGodkendtChanging(bool value);
+    partial void OnGodkendtChanged();
+    partial void OnAfvistChanging(bool value);
+    partial void OnAfvistChanged();
+    partial void OnIndberettetChanging(bool value);
+    partial void OnIndberettetChanged();
+    #endregion
+		
+		public Fravaer()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedarbejderId", DbType="Int NOT NULL")]
+		public int MedarbejderId
+		{
+			get
+			{
+				return this._MedarbejderId;
+			}
+			set
+			{
+				if ((this._MedarbejderId != value))
+				{
+					this.OnMedarbejderIdChanging(value);
+					this.SendPropertyChanging();
+					this._MedarbejderId = value;
+					this.SendPropertyChanged("MedarbejderId");
+					this.OnMedarbejderIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoersteFravaersdag", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> FoersteFravaersdag
+		{
+			get
+			{
+				return this._FoersteFravaersdag;
+			}
+			set
+			{
+				if ((this._FoersteFravaersdag != value))
+				{
+					this.OnFoersteFravaersdagChanging(value);
+					this.SendPropertyChanging();
+					this._FoersteFravaersdag = value;
+					this.SendPropertyChanged("FoersteFravaersdag");
+					this.OnFoersteFravaersdagChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SidsteFravaersdag", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> SidsteFravaersdag
+		{
+			get
+			{
+				return this._SidsteFravaersdag;
+			}
+			set
+			{
+				if ((this._SidsteFravaersdag != value))
+				{
+					this.OnSidsteFravaersdagChanging(value);
+					this.SendPropertyChanging();
+					this._SidsteFravaersdag = value;
+					this.SendPropertyChanged("SidsteFravaersdag");
+					this.OnSidsteFravaersdagChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Godkendt", DbType="Bit NOT NULL")]
+		public bool Godkendt
+		{
+			get
+			{
+				return this._Godkendt;
+			}
+			set
+			{
+				if ((this._Godkendt != value))
+				{
+					this.OnGodkendtChanging(value);
+					this.SendPropertyChanging();
+					this._Godkendt = value;
+					this.SendPropertyChanged("Godkendt");
+					this.OnGodkendtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Afvist", DbType="Bit NOT NULL")]
+		public bool Afvist
+		{
+			get
+			{
+				return this._Afvist;
+			}
+			set
+			{
+				if ((this._Afvist != value))
+				{
+					this.OnAfvistChanging(value);
+					this.SendPropertyChanging();
+					this._Afvist = value;
+					this.SendPropertyChanged("Afvist");
+					this.OnAfvistChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Indberettet", DbType="Bit NOT NULL")]
+		public bool Indberettet
+		{
+			get
+			{
+				return this._Indberettet;
+			}
+			set
+			{
+				if ((this._Indberettet != value))
+				{
+					this.OnIndberettetChanging(value);
+					this.SendPropertyChanging();
+					this._Indberettet = value;
+					this.SendPropertyChanged("Indberettet");
+					this.OnIndberettetChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ferie")]
 	public partial class Ferie : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -496,7 +702,7 @@ namespace FerieFravaerIndberetning.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -592,212 +798,6 @@ namespace FerieFravaerIndberetning.Models
 					this._FerieLoen = value;
 					this.SendPropertyChanged("FerieLoen");
 					this.OnFerieLoenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Godkendt", DbType="Bit NOT NULL")]
-		public bool Godkendt
-		{
-			get
-			{
-				return this._Godkendt;
-			}
-			set
-			{
-				if ((this._Godkendt != value))
-				{
-					this.OnGodkendtChanging(value);
-					this.SendPropertyChanging();
-					this._Godkendt = value;
-					this.SendPropertyChanged("Godkendt");
-					this.OnGodkendtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Afvist", DbType="Bit NOT NULL")]
-		public bool Afvist
-		{
-			get
-			{
-				return this._Afvist;
-			}
-			set
-			{
-				if ((this._Afvist != value))
-				{
-					this.OnAfvistChanging(value);
-					this.SendPropertyChanging();
-					this._Afvist = value;
-					this.SendPropertyChanged("Afvist");
-					this.OnAfvistChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Indberettet", DbType="Bit NOT NULL")]
-		public bool Indberettet
-		{
-			get
-			{
-				return this._Indberettet;
-			}
-			set
-			{
-				if ((this._Indberettet != value))
-				{
-					this.OnIndberettetChanging(value);
-					this.SendPropertyChanging();
-					this._Indberettet = value;
-					this.SendPropertyChanged("Indberettet");
-					this.OnIndberettetChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fravaer")]
-	public partial class Fravaer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _MedarbejderId;
-		
-		private System.Nullable<System.DateTime> _FoersteFravaersdag;
-		
-		private System.Nullable<System.DateTime> _SidsteFravaersdag;
-		
-		private bool _Godkendt;
-		
-		private bool _Afvist;
-		
-		private bool _Indberettet;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnMedarbejderIdChanging(int value);
-    partial void OnMedarbejderIdChanged();
-    partial void OnFoersteFravaersdagChanging(System.Nullable<System.DateTime> value);
-    partial void OnFoersteFravaersdagChanged();
-    partial void OnSidsteFravaersdagChanging(System.Nullable<System.DateTime> value);
-    partial void OnSidsteFravaersdagChanged();
-    partial void OnGodkendtChanging(bool value);
-    partial void OnGodkendtChanged();
-    partial void OnAfvistChanging(bool value);
-    partial void OnAfvistChanged();
-    partial void OnIndberettetChanging(bool value);
-    partial void OnIndberettetChanged();
-    #endregion
-		
-		public Fravaer()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedarbejderId", DbType="Int NOT NULL")]
-		public int MedarbejderId
-		{
-			get
-			{
-				return this._MedarbejderId;
-			}
-			set
-			{
-				if ((this._MedarbejderId != value))
-				{
-					this.OnMedarbejderIdChanging(value);
-					this.SendPropertyChanging();
-					this._MedarbejderId = value;
-					this.SendPropertyChanged("MedarbejderId");
-					this.OnMedarbejderIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoersteFravaersdag", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> FoersteFravaersdag
-		{
-			get
-			{
-				return this._FoersteFravaersdag;
-			}
-			set
-			{
-				if ((this._FoersteFravaersdag != value))
-				{
-					this.OnFoersteFravaersdagChanging(value);
-					this.SendPropertyChanging();
-					this._FoersteFravaersdag = value;
-					this.SendPropertyChanged("FoersteFravaersdag");
-					this.OnFoersteFravaersdagChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SidsteFravaersdag", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> SidsteFravaersdag
-		{
-			get
-			{
-				return this._SidsteFravaersdag;
-			}
-			set
-			{
-				if ((this._SidsteFravaersdag != value))
-				{
-					this.OnSidsteFravaersdagChanging(value);
-					this.SendPropertyChanging();
-					this._SidsteFravaersdag = value;
-					this.SendPropertyChanged("SidsteFravaersdag");
-					this.OnSidsteFravaersdagChanged();
 				}
 			}
 		}
