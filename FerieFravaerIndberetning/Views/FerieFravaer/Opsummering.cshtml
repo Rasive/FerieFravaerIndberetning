@@ -1,0 +1,54 @@
+﻿@model FerieFravaerIndberetning.Models.FerieFravaer
+@{
+    ViewBag.Title = "Opsummering";
+}
+
+<h2>Opsummering</h2>
+<h3>Du er ved at indberette følgende: <b>@ViewBag.Indberetningstype</b></h3>
+@using(Html.BeginForm("Indberet", "Feriefravaer"))
+{
+    if (Model.Ferie != null)
+    {
+        @Html.HiddenFor(model => model.Ferie.FoersteFeriedag)
+        @Html.HiddenFor(model => model.Ferie.SidsteFeriedag)
+        @Html.HiddenFor(model => model.Ferie.FerieLoen)
+        <table>
+            <tr>
+                <td>Første feriedag</td><td>Sidste feriedag</td><td>Feriedage</td><td>Ferietimer</td><td>Løn</td>
+            </tr>
+            <tr>
+                <td>@Model.Ferie.FoersteFeriedag.ToString("dd-MM-yyyy")</td><td>@Model.Ferie.SidsteFeriedag.ToString("dd-MM-yyyy")</td><td>@Model.Ferie.Feriedage</td><td>@Model.Ferie.Ferietimer</td><td>@(Model.Ferie.FerieLoen? "Ja" : "Nej")</td>
+            </tr>
+        </table>
+    }
+    else if (Model.Fravaer != null)
+    {
+        @Html.HiddenFor(model => model.Fravaer.FoersteFravaersdag)
+        @Html.HiddenFor(model => model.Fravaer.SidsteFravaersdag)
+
+        <table>
+            <tr>
+                @if (Model.Fravaer.FoersteFravaersdag != null)
+                {
+                    <td>Første sygedag</td>
+                }
+                @if (Model.Fravaer.SidsteFravaersdag != null)
+                {
+                    <td>Raskmelding</td>
+                }
+            </tr>
+            <tr>
+                @if (Model.Fravaer.FoersteFravaersdag != null)
+                {
+                    <td>@Model.Fravaer.FoersteFravaersdag</td>
+                }
+                @if (Model.Fravaer.SidsteFravaersdag != null)
+                {
+                    <td>@Model.Fravaer.SidsteFravaersdag</td>
+                }
+            </tr>
+        </table>
+    }
+    
+    <input type="submit" value="Godkend og send" />
+}

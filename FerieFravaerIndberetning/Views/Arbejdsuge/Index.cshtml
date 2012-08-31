@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FerieFravaerIndberetning.Models.ArbejdsugeTimer>
+
+@{
+    ViewBag.Title = "Arbejdsuge";
+}
+
+<h2>Arbejdsuge</h2>
+<p>Din fordeling af timer på en almindelig arbejdsuge. Tryk på knappen rediger for at ændre din timefordeling.</p>
+
+<table>
+    <tr>
+	    <td>Uge nr.</td><td>Mandag</td><td>Tirsdag</td><td>Onsdag</td><td>Torsdag</td><td>Fredag</td><td>Lørdag</td><td>Søndag</td><td>Timetal</td>
+    </tr>
+    @{ int weekIdCount = 1;}
+    @foreach (var item in Model)
+    {
+        using(Html.BeginForm("Update", "Arbejdsuge", new { weekId = weekIdCount++ }))
+        {
+        <tr>
+            <td>@item.WeekToString()</td>
+            <td>@item.Mandag</td>
+            <td>@item.Tirsdag</td>
+            <td>@item.Onsdag</td>
+            <td>@item.Torsdag</td>
+            <td>@item.Fredag</td>
+            <td>@item.Loerdag</td>
+            <td>@item.Soendag</td>
+            <td class="arbejdsugetimersum">@item.GetArbejdsugeTimerSum()</td>
+            <td><input type="button" value="Rediger" id="arbejdsugeeditbutton" /></td>
+        </tr>
+        <tr class="hidden">
+            <td>@item.WeekToString()</td>
+            <td>@Html.TextBox("Mandag", item.Mandag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Tirsdag", item.Tirsdag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Onsdag", item.Onsdag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Torsdag", item.Torsdag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Fredag", item.Fredag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Loerdag", item.Loerdag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td>@Html.TextBox("Soendag", item.Soendag, new { @class = "sum", style = "width: 40px;" })</td>
+            <td class="arbejdsugetimersum">@item.GetArbejdsugeTimerSum()</td>
+            <td><input type="button" value="Gem" onclick="submit()" /><input type="button" value="Fortryd" onclick="window.location.reload()" /></td>
+        </tr>
+        }
+    }
+</table>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Arbejdsuge.js")"></script>

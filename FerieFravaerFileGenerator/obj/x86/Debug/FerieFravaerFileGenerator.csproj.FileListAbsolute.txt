@@ -1,0 +1,6 @@
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\bin\Debug\FerieFravaerFileGenerator.exe
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\bin\Debug\FerieFravaerFileGenerator.pdb
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\obj\x86\Debug\FerieFravaerFileGenerator.exe
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\obj\x86\Debug\FerieFravaerFileGenerator.pdb
+C:\Users\rzi\Documents\Visual Studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerFileGenerator\bin\Debug\FerieFravaerFileGenerator.exe.config

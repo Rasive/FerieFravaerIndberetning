@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FerieFravaerDBClasses">
+  <DataContextMoniker Name="/FerieFravaerDBClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9fcb52fa-e46e-4f56-825c-32af2f031524" absoluteBounds="1.75, 1.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/Indberetningstype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="716dd0b9-f627-4269-8317-d7659fb056dc" absoluteBounds="1.7650000000000001, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aface197-5119-4be5-8e36-6599bcf5f713" absoluteBounds="4.125, 1.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/ArbejdsugeTimer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f86772a2-eb89-4096-a350-cee9f9e77967" absoluteBounds="4.14, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b713bf0-93ce-4564-9ce4-742df8bb9298" absoluteBounds="0.75, 3.75, 2, 2.347801106770834">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/Ferie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="435a2cd5-afdd-4ab4-989f-de06b4c15e75" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2e1efb8-200b-4a51-93ad-04a915b67244" absoluteBounds="3.75, 5.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/Fravaer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77d1cbed-19bf-46a6-bc0a-7211b0dbf3fb" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

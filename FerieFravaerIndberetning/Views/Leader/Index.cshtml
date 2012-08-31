@@ -1,0 +1,33 @@
+﻿@model Tuple<List<FerieFravaerIndberetning.Models.Ferie>, List<FerieFravaerIndberetning.Models.Fravaer>>
+@{
+    ViewBag.Title = "Index";
+}
+<p>Godkend eller afvis indberetninger. Godkendte indberetninger indleveres til KMD snarest muligt.</p>
+<p>Når en indberetning er indleveret til KMD fremgår den ikke længere af listen.</p>
+<h2>Ferieindberetninger</h2>
+<table id="ferie">
+    <tr>
+        <td>Medarbejder nr.</td><td>Navn</td><td>Fra</td><td>Til</td><td>Ferie med løn</td>
+    </tr>
+@foreach(FerieFravaerIndberetning.Models.Ferie ferie in Model.Item1)
+{
+    <tr @(ferie.Godkendt ? "class=green" : ferie.Afvist ? "class=red" : "") id="@(ferie.Id)">
+        <td>@(ferie.MedarbejderId)</td><td>test</td><td>@(ferie.FoersteFeriedag)</td><td>@(ferie.SidsteFeriedag)</td><td>@(ferie.FerieLoen ? "ja" : "Nej")</td><td><input type="button" value="Godkend" name="godkend" /></td><td><input type="button" name="afvis" value="Afvis" /></td>
+    </tr>
+}
+</table>
+
+<h2>Fraværsindberetninger</h2>
+<table id="fravaer">
+    <tr>
+        <td>Medarbejder nr.</td><td>Navn</td><td>Første fraværsdag</td>
+    </tr>
+    @foreach(FerieFravaerIndberetning.Models.Fravaer fravaer in Model.Item2)
+    {
+        <tr @(fravaer.Godkendt ? "class=green" : fravaer.Afvist ? "class=red" : "") id="@(fravaer.Id)">
+            <td>@(fravaer.MedarbejderId)</td><td>test</td><td>@(fravaer.FoersteFravaersdag)</td><td><input type="button" value="Godkend" name="godkend" /></td><td><input type="button" name="afvis" value="Afvis" /></td>
+        </tr>
+    }
+</table>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Leader.js")"></script>

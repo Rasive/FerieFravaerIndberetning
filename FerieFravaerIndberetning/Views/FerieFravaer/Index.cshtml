@@ -1,0 +1,55 @@
+﻿@model FerieFravaerIndberetning.Models.FerieFravaer
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ferie- og fraværsindberetning</h2>
+<p>Hvad ønsker du at indberette?</p>
+
+@Html.DropDownList("Indberetningstype", Model.Indberetningstyper)
+
+<div id="FOSYG" class="hidden">
+<p>Angiv en dato for første sygedag.</p>
+@using (Html.BeginForm("Opsummering", "FerieFravaer"))
+{
+    @Html.Hidden("Indberetningstype", "FOSYG")
+    @Html.TextBox("Fravaer_FoersteSygedag", DateTime.Today.ToString("dd-MM-yyyy") + " 00:00", new { @class = "date time", @Value = DateTime.Today.ToString("dd-MM-yyyy") })
+    <input type="submit" value="Send" />
+}
+</div>
+
+<div id="RASKM" class="hidden">
+<p>Angiv en dato for raskmelding fra sygdom. Tidspunktet skal ikke være første arbejdsdag.</p>
+@using (Html.BeginForm("Opsummering", "FerieFravaer"))
+{
+    @Html.Hidden("Indberetningstype", "RASKM")
+    @Html.TextBox("Fravaer_SidsteSygedag", DateTime.Today.ToString("dd-MM-yyyy") + " 00:00", new { @class = "date time", @Value = DateTime.Today.ToString("dd-MM-yyyy") })
+    <input type="submit" value="Send" />
+}
+</div>
+
+<div id="FERIE" class="hidden">
+<p>Angiv de perioder hvor du ønsker at holde ferie og tryk på send.</p>
+@using (Html.BeginForm("Opsummering", "FerieFravaer"))
+{
+    @Html.Hidden("Indberetningstype", "FERIE")
+    <table>
+        <tr>
+            <td>Første feriedag</td><td>Sidste feriedag</td><td>Feriedage</td><td>Ferietimer</td><td>Ferie med løn</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBox("Ferie_FoersteFeriedag", null, new { @class = "date" })</td>
+            <td>@Html.TextBox("Ferie_SidsteFeriedag", null, new { @class = "date" })</td>
+            <td id="Feriedage">0</td>
+            <td id="Ferietimer">0</td>
+            <td>@Html.CheckBoxFor(model => model.Ferie.FerieLoen, new { @checked = true })</td>
+        </tr>
+    </table>
+    <input type="submit" value="Send" />
+}
+</div>
+
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/FerieFravaer.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-timepicker-addon.js")"></script>

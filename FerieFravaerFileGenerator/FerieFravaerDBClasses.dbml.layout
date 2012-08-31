@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FerieFravaerDBClasses">
+  <DataContextMoniker Name="/FerieFravaerDBClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b751aeb6-56eb-4230-a32c-5d013379302d" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/Ferie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cd8a669-0ff7-4fcf-b84c-27748781046a" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f8bd840-1bbe-4eb9-a35a-ad757e072251" absoluteBounds="3.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FerieFravaerDBClassesDataContext/Fravaer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38ecdd71-2e3e-432f-a2b2-92ad30d9faaf" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

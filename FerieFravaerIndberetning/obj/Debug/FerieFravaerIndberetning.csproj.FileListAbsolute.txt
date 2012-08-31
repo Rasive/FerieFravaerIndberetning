@@ -1,0 +1,5 @@
+c:\users\rzi\documents\visual studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerIndberetning\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rzi\documents\visual studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerIndberetning\bin\FerieFravaerIndberetning.dll
+c:\users\rzi\documents\visual studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerIndberetning\bin\FerieFravaerIndberetning.pdb
+c:\users\rzi\documents\visual studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerIndberetning\obj\Debug\FerieFravaerIndberetning.dll
+c:\users\rzi\documents\visual studio 2010\Projects\FerieFravaerIndberetning\FerieFravaerIndberetning\obj\Debug\FerieFravaerIndberetning.pdb
