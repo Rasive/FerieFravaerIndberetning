@@ -14,6 +14,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+
+
 === ABOUT THIS PROJECT ===
 The project consists of two parts, one is the web based interface for the reporting of absence and vacation to a local instance, the second is the actual reporting to KMD Ferie and KMD Fravær which is a program running at dayli intervals generating files "snitfladefiler" for when KMD does a pull request.
 
